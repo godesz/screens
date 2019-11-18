@@ -1,0 +1,15 @@
+
+  myFile = SD.open("sorszam.txt", FILE_READ);
+  while (myFile.available()) {
+    ssz = myFile.read();
+    Serial.print(ssz);
+        }
+  sorszam = ssz.toInt();
+  sorszam++;
+  Serial.print("Filename: ");
+  Serial.print(ssz);
+  Serial.println(".txt");
+  myFile.close();
+  myFile = SD.open("sorszam.txt", FILE_WRITE);
+  myFile.println(sorszam);
+  myFile.close();
